@@ -1,0 +1,99 @@
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 75%;
+}
+
+.timeline {
+    text-align: center;
+}
+.title {
+    display: inline-block;
+    font-size: 36px;
+    font-weight: bold;
+    position: relative;
+}
+.timeline .title span {
+    display: inline-block;
+    padding-bottom: 6px;
+    border-bottom: 1px solid darkgray;
+}
+.present .inner span {
+    border-top: 1px solid darkgray;
+}
+.days {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.day {
+    width: 100%;
+    float: left;
+}
+.info {
+    position: relative;
+    float: left;
+    border-right: 1px solid darkgray;
+    padding: 30px;
+    text-align: right;
+    width: 50%;
+}
+.date {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    padding: 30px;
+    text-align: left;
+    color: darkgray;
+    font-size: 24px;
+    white-space: nowrap;
+}
+.image {
+    margin-right: -30px;
+    position: relative;
+    overflow: hidden;
+}
+.image img {
+    display: block;
+    float: right;
+}
+
+/*Underline half of info*/
+.timeline .days .day .info:after {
+    content: "";
+    width: 50%;
+    display: inline-block;
+    height: 1px;
+    background: darkgray;
+    position: absolute;
+    right: 0;
+}
+
+
+/*Arrange on alternating sides of center*/
+.day:nth-child(odd) .info {
+    width: calc(50% + 1px);
+    float: right;
+    border-right: 0;
+    border-left: 1px solid darkgray;
+    text-align: left;
+}
+.day:nth-child(odd) .info:after {
+    right: auto;
+    left: 0;
+}
+.day:nth-child(odd) .info .date {
+    left: auto;
+    right: 100%;
+    text-align: left;
+}
+.day:nth-child(odd) .info .image {
+    margin-right: auto;
+    margin-left: -30px;
+}
+.day:nth-child(odd) .info .image img {
+    float: left;
+}
